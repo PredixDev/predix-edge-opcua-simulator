@@ -1,0 +1,14 @@
+{
+  "name": "myserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Warn: no test specified\" && exit 0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-opcua": "^0.4.5"
+  }
+}
