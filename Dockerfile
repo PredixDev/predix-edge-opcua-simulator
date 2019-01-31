@@ -6,7 +6,7 @@ LABEL maintainer="Predix Edge Application Services"
 LABEL hub="https://hub.docker.com"
 LABEL org="https://hub.docker.com/u/predixadoption"
 LABEL repo="predix-edge-opcua-simulator"
-LABEL version="1.0.4"
+LABEL version="1.0.5"
 LABEL support="https://forum.predix.io"
 LABEL license="https://github.com/PredixDev/predix-docker-samples/blob/master/LICENSE.md"
 
@@ -18,7 +18,7 @@ RUN apk add -U nodejs-npm  && \
     rm -f /var/cache/apk/*
 
 # Create app directory in the image
-WORKDIR /usr
+#WORKDIR /usr
 
 # copy app's source files to the image
 COPY config ./config
