@@ -1,5 +1,5 @@
 const opcua = require("node-opcua");
-const config_file = "./config-simulator.json";
+const config_file = "./config/config-simulator.json";
 const config = require(config_file);
 
 const server = new opcua.OPCUAServer({
@@ -22,16 +22,15 @@ function addCounterVariable (namespace, device, item){
         }
 
         let variable = item.counter.start;
-        
+
         setInterval(function() {
             if((variable + item.counter.increment) > item.counter.max) {
                 variable = item.counter.min
-            } 
+            }
             else {
-                variable += item.counter.increment; 
+                variable += item.counter.increment;
             }
         }, item.frequency);
-        
         namespace.addVariable({
             componentOf: device,
             nodeId: "ns=" + namespace.index + ";s=" + item.browseName,
@@ -50,11 +49,11 @@ function addBooleanVariable (namespace, device, item){
     let opcuaType = opcua.DataType.Boolean;
 
     let variable = item.boolean.start;
-    
+
     setInterval(function() {
         variable = !variable;
     }, item.frequency);
-    
+
     namespace.addVariable({
         componentOf: device,
         nodeId: "ns=" + namespace.index + ";s=" + item.browseName,
@@ -78,11 +77,11 @@ function addRandomVariable (namespace, device, item){
     }
 
     let variable = 0;
-    
+
     setInterval(function() {
         variable = (Math.random() * (item.random.max - item.random.min) + item.random.min).toFixed(item.random.precision);
     }, item.frequency);
-    
+
     namespace.addVariable({
         componentOf: device,
         nodeId: "ns=" + namespace.index + ";s=" + item.browseName,
@@ -99,18 +98,18 @@ function addRandomVariable (namespace, device, item){
 function post_initialize() {
 
     function construct_my_address_space(server) {
-    
+
         const addressSpace = server.engine.addressSpace;
         const namespace = addressSpace.getOwnNamespace();
-        
+
         // declare a new object
         const device = namespace.addObject({
             organizedBy: addressSpace.rootFolder.objects,
             browseName: "Simulator"
         });
-        
+
         config.forEach(function(item) {
-            
+
             if (item.counter)
             {
                 addCounterVariable (namespace, device, item);
