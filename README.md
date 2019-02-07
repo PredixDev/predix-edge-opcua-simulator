@@ -41,5 +41,10 @@ If your build machine is behind a proxy you will need to specify the proxies as 
 docker build --build-arg http_proxy=$http_proxy --build-arg https_proxy=$https_proxy -t predixadoption/predix-edge-opcua-simulator:latest .
 ```
 
+## Run the Container
+
+```bash
+docker run predixadoption/predix-edge-opcua-simulator:latest
+```
 
 [![Analytics](https://predix-beacon.appspot.com/UA-82773213-1/predix-edge-opcua-simulator/readme?pixel)](https://github.com/PredixDev)
