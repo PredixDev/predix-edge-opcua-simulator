@@ -6,7 +6,7 @@ LABEL maintainer="Predix Edge Application Services"
 LABEL hub="https://hub.docker.com"
 LABEL org="https://hub.docker.com/u/predixedge"
 LABEL repo="predix-edge-opcua-simulator"
-LABEL version="1.0.7"
+LABEL version="1.0.9"
 LABEL support="https://forum.predix.io"
 LABEL license="https://github.com/PredixDev/predix-docker-samples/blob/master/LICENSE.md"
 
