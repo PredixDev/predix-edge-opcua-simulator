@@ -32,19 +32,19 @@ node app.js
 ## Build the Docker Container
 
 ```bash
-docker build -t predixadoption/predix-edge-opcua-simulator:latest .
+docker build -t predixedge/predix-edge-opcua-simulator:latest .
 ```
 
 If your build machine is behind a proxy you will need to specify the proxies as build arguments. You can pull in the proxy values from the environment variables on your machine.
 
 ```bash
-docker build --build-arg http_proxy=$http_proxy --build-arg https_proxy=$https_proxy -t predixadoption/predix-edge-opcua-simulator:latest .
+docker build --build-arg http_proxy=$http_proxy --build-arg https_proxy=$https_proxy -t predixedge/predix-edge-opcua-simulator:latest .
 ```
 
 ## Run the Container
 
 ```bash
-docker run predixadoption/predix-edge-opcua-simulator:latest
+docker run predixedge/predix-edge-opcua-simulator:latest
 ```
 
 [![Analytics](https://predix-beacon.appspot.com/UA-82773213-1/predix-edge-opcua-simulator/readme?pixel)](https://github.com/PredixDev)
